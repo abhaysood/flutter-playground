@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'drag_demo.dart';
+import 'drag_demo/drag_demo.dart';
 
 void main() {
   runApp(
