@@ -2,7 +2,7 @@ import 'package:drag/drag_demo/task_list_item.dart';
 import 'package:drag/item.dart';
 import 'package:flutter/material.dart';
 
-import '../circular_reveal_clipper.dart';
+import 'circular_reveal_clipper.dart';
 
 class DragDemo extends StatefulWidget {
   @override
@@ -15,13 +15,11 @@ class _DragDemoState extends State<DragDemo> {
   final _tasks = TasksStore.tasks;
 
   Widget _buildList() {
-    return Expanded(
-      child: AnimatedList(
-        key: _listGlobalKey,
-        initialItemCount: _tasks.length,
-        itemBuilder: (_, index, animation) => _buildTaskItem(_tasks[index]),
-        padding: EdgeInsets.symmetric(horizontal: 16),
-      ),
+    return AnimatedList(
+      key: _listGlobalKey,
+      initialItemCount: _tasks.length,
+      itemBuilder: (_, index, animation) => _buildTaskItem(_tasks[index]),
+      padding: EdgeInsets.symmetric(horizontal: 16),
     );
   }
 
@@ -73,7 +71,7 @@ class _DragDemoState extends State<DragDemo> {
         height: 80,
         color: candidateData.isNotEmpty
             ? Color(0xFFFFC4BB)
-            : Color(0xFFFFC4BB).withOpacity(0.5),
+            : Color(0xFFFFC4BB).withOpacity(0.7),
         child: Text(
           "Drop a task here to delete",
           style: TextStyle(
@@ -84,26 +82,6 @@ class _DragDemoState extends State<DragDemo> {
         ),
       ),
     );
-    /*
-    return AnimatedContainer(
-      duration: Duration(milliseconds: 200),
-      color: candidateData.isNotEmpty
-          ? Color(0xFFFFC4BB)
-          : Color(0xFFFFC4BB).withOpacity(0.3),
-      height: 80,
-      child: Container(
-        alignment: Alignment.center,
-        child: Text(
-          "Drop here to delete",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 18,
-            color: Color(0xFF2F4858),
-          ),
-        ),
-      ),
-    );
-     */
   }
 
   Container _buildListHeading() {
