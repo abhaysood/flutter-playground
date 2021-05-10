@@ -21,7 +21,7 @@ class Task {
 class TasksStore {
   TasksStore._();
 
-  static List<Task> tasks = List.generate(100, (index) {
+  static List<Task> tasks = List.generate(20, (index) {
     return Task(
       id: index.toString(),
       title: "Title $index",

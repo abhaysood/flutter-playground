@@ -1,8 +1,7 @@
-import 'package:drag/drag_demo/task_list_item.dart';
+import 'package:drag/drag_delete/circular_reveal_clipper.dart';
+import 'package:drag/drag_delete/task_list_item.dart';
 import 'package:drag/item.dart';
 import 'package:flutter/material.dart';
-
-import 'circular_reveal_clipper.dart';
 
 class DragDemo extends StatefulWidget {
   @override
